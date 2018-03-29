@@ -1,0 +1,1 @@
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe.config
