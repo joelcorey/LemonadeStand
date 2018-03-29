@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    class CurencyExchange
     {
-        // Member variables
-
-        // Constructor
-
-        // Member methods
-
     }
 }

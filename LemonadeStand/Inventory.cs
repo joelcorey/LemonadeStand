@@ -8,5 +8,11 @@ namespace LemonadeStand
 {
     class Inventory
     {
+        // Member variables
+
+        // Constructor
+
+        // Member methods
+
     }
 }

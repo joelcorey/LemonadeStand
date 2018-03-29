@@ -6,39 +6,36 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Player
+    class Currency
     {
         // Member variables
         private string name;
-        private decimal money;
-        private int level;
+        private decimal defaultValue;
+        private int numericDesignation;
 
         public string Name
         {
             get { return name; }
         }
 
-        public decimal Money
+        public decimal DefaultValue
         {
-            get { return money; }
-            set { money = value; }
+            get { return defaultValue; }
         }
 
-        public int Level
+        public int NumericDesignation
         {
-            get { return level; }
-            set { level = value; }
+            get { return numericDesignation; }
         }
 
         // Constructor
-        public Player(string name, decimal money, int level)
+        public Currency(string name, int defaultValue, int numericDesignation)
         {
             this.name = name;
-            this.money = money;
-            this.level = level;
+            this.defaultValue = defaultValue;
+            this.numericDesignation = numericDesignation;
         }
 
         // Member methods
-
     }
 }

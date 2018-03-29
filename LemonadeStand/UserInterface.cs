@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class UserInterface
+    public static class UserInterface
     {
-        // Member variables
+        
+        public static void DisplayText(string input)
+        {
+            Console.WriteLine(input);
+        }
 
-        // Constructor
-
-        // Member methods
+        public static string GetInput()
+        { 
+            return Console.ReadLine();
+        }
 
     }
 }

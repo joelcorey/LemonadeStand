@@ -8,5 +8,12 @@ namespace LemonadeStand
 {
     class Day
     {
+        // Member variables
+            // Customers per hour?
+
+        // Constructor
+
+        // Member methods
+
     }
 }
