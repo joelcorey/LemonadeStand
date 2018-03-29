@@ -8,8 +8,16 @@ namespace LemonadeStand
 {
     class Game
     {
+        // Member variables
 
-        Game game = new Game();
+        // Constructor
+
+        // Member methods  
+        public void GameLoop()
+        {
+
+
+        }
 
     }
 }
