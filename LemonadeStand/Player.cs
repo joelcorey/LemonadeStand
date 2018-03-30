@@ -38,6 +38,10 @@ namespace LemonadeStand
             this.level = level;
         }
 
+        //public Derp()
+        //{
+
+        //} 
 
         
         // Member methods

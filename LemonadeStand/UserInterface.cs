@@ -16,7 +16,7 @@ namespace LemonadeStand
 
         public static void DisplayDouble(double input)
         {
-            Console.WriteLine(input);
+            Console.WriteLine("{0:0.00}", input);
         }
 
         public static string GetInput()

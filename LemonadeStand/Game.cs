@@ -20,10 +20,7 @@ namespace LemonadeStand
 
         // Member methods 
         public void GameStart()
-        {
-
-            
-            
+        {   
             // Convert week to object:
             week = 1;
 
@@ -33,9 +30,13 @@ namespace LemonadeStand
         }
         public void GameLoop()
         {
-            Player playerOne = new Player("Player one", 10.10, 0);
+            Player playerOne = new Player("Player one", 10.00, 0);
             UserInterface.DisplayDouble(playerOne.Money);
 
+
+            // Go to market/store and buy pitchers, lemons, sugar, etc
+            // subtract money
+            // put items in inventory
 
             Console.ReadLine();
             
