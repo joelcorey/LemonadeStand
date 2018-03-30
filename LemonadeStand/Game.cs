@@ -20,9 +20,9 @@ namespace LemonadeStand
 
         // Member methods 
         public void GameStart()
-        {   
-            // Convert week to object:
-            week = 1;
+        {
+            Database database = new Database();
+            database.DatabaseConnect();
 
             
             // If first load, display intro and main menu
