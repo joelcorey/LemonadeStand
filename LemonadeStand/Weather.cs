@@ -9,6 +9,7 @@ namespace LemonadeStand
     class Weather
     {
         // Member variables
+        public int CustomerMoodInfluencer;
 
         // Constructor
 

@@ -28,7 +28,8 @@ namespace LemonadeStand
             // integrate a Weather API, so that my game has real-time weather based on a current temperature and forecast.
 
             Game game = new Game();
-
+            game.GameStart();
+            game.GameLoop();
         }
     }
 }

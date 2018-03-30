@@ -14,6 +14,11 @@ namespace LemonadeStand
             Console.WriteLine(input);
         }
 
+        public static void DisplayDouble(double input)
+        {
+            Console.WriteLine(input);
+        }
+
         public static string GetInput()
         { 
             return Console.ReadLine();
