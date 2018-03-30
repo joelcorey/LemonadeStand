@@ -31,7 +31,7 @@ namespace LemonadeStand
         public void GameLoop()
         {
             Player playerOne = new Player("Player one", 10.00, 0);
-            UserInterface.DisplayDouble(playerOne.Money);
+            //UserInterface.DisplayDouble(playerOne.Money);
 
 
             // Go to market/store and buy pitchers, lemons, sugar, etc

@@ -4,7 +4,6 @@ C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.pdb
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.exe
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.pdb
-C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\Firebase.dll
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\Newtonsoft.Json.dll
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Reactive.Core.dll
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Reactive.Interfaces.dll
