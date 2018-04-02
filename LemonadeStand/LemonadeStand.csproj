@@ -120,6 +120,7 @@
     <Compile Include="Store.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Weather.cs" />
+    <Compile Include="WeatherAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

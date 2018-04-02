@@ -9,8 +9,9 @@ namespace LemonadeStand
     class Game
     {
         // Member variables
-        Random random;
-
+        Day day;
+        Random rnd = new Random();
+        public int determineWeather;
         public int dayTracker = 1;
         public int dayLimit = 20;
         public int week = 1;
@@ -21,6 +22,8 @@ namespace LemonadeStand
         // Member methods 
         public void GameStart()
         {
+            var derp = rnd.Next(1, 5);
+
             //string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
             //Database database = new Database();
             //database.DatabaseConnect(connectionString);
@@ -30,8 +33,8 @@ namespace LemonadeStand
 
 
 
-            Weather weather = new Weather();
-            //weather.WeatherApi2();
+            WeatherAPI weather = new WeatherAPI();
+            weather.WeatherApi2();
 
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
@@ -49,7 +52,7 @@ namespace LemonadeStand
 
             while (dayTracker <= dayLimit)
             {
-                Day day = new Day();
+                day = new Day();
 
 
 
