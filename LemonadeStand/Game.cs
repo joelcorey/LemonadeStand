@@ -21,13 +21,17 @@ namespace LemonadeStand
         // Member methods 
         public void GameStart()
         {
-            Database database = new Database();
-            database.DatabaseConnect();
+            string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
 
-            
+            Database database = new Database();
+            database.DatabaseConnect(connectionString);
+            //database.DatabaseInsertScore("Derplestein", 9001);
+            database.DatabaseShowScore();
+            database.DatabaseClose();
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
         }
+
         public void GameLoop()
         {
             Player playerOne = new Player("Player one", 10.00, 0);

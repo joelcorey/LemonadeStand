@@ -17,3 +17,11 @@ C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Reactive.Linq.xml
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Reactive.PlatformServices.xml
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.SqlServer.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Data.SQLite.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Data.SQLite.EF6.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Data.SQLite.Linq.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.xml
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.SqlServer.xml
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Data.SQLite.xml

@@ -4,18 +4,41 @@ using System.Data.SQLite;
 
 namespace LemonadeStand
 {
-    class Database : APIKey
-    { 
+    class Database
+    {
+        //http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
 
-        public void DatabaseConnect()
+        SQLiteConnection sqliteConnection;
+        SQLiteCommand sqliteCommand;
+        SQLiteDataReader sqliteRead;
+        string sql;
+
+        public void DatabaseConnect(string connectionString)
         {
-            SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;");
-
+            sqliteConnection = new SQLiteConnection(connectionString);
+            sqliteConnection.Open();
         }
 
-        private void DatabaseSetup()
+        public void DatabaseInsertScore(string name, int score)
         {
+            sql = "insert into Score (Name, Score) values('" + name + "', " + score + ");";
+            sqliteCommand = new SQLiteCommand(sql, sqliteConnection);
+        }
 
+        public void DatabaseShowScore()
+        {
+            sql = "SELECT Name, Score FROM Score ORDER BY Score;";
+            sqliteCommand = new SQLiteCommand(sql, sqliteConnection);
+            sqliteRead = sqliteCommand.ExecuteReader();
+            while (sqliteRead.Read())
+            {
+                Console.WriteLine("Name: " + sqliteRead["NAME"] + " " + "Score: " + sqliteRead["SCORE"]);
+            }
+        }
+
+        public void DatabaseClose()
+        {
+            sqliteConnection.Close();
         }
     }
 }
