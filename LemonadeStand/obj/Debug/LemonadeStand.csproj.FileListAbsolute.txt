@@ -25,3 +25,6 @@ C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.xml
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\EntityFramework.SqlServer.xml
 C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.Data.SQLite.xml
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\RestSharp.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.ValueTuple.dll
+C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\LemonadeStand\bin\Debug\System.ValueTuple.xml

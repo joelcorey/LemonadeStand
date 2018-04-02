@@ -11,9 +11,9 @@ namespace LemonadeStand
         // Member variables
         Random random;
 
-        public int turn;
-        public int turnLimit = 20;
-
+        public int dayTracker = 1;
+        public int dayLimit = 20;
+        public int week = 1;
 
 
         // Constructor
@@ -31,7 +31,7 @@ namespace LemonadeStand
 
 
             Weather weather = new Weather();
-            weather.WeatherApi();
+            //weather.WeatherApi2();
 
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
@@ -47,15 +47,24 @@ namespace LemonadeStand
             // subtract money
             // put items in inventory
 
-            while (turn <= turnLimit)
+            while (dayTracker <= dayLimit)
             {
+                Day day = new Day();
 
+
+
+
+
+                Console.WriteLine(day.GetDayName(dayTracker));
+                Console.WriteLine("Week: " + week);
+                dayTracker += 1;
+                if (dayTracker > 7)
+                {
+                    week += 1;
+                    dayTracker = 1;
+                }
 
                 Console.ReadLine();
-
-                Console.WriteLine("Turn: " + turn);
-                turn += 1;
-                
             }
             
         }
