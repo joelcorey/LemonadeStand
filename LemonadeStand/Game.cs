@@ -11,8 +11,8 @@ namespace LemonadeStand
         // Member variables
         Random random;
 
-        List<string> days;
-        public int week;
+        public int turn;
+        public int turnLimit = 20;
 
 
 
@@ -21,13 +21,18 @@ namespace LemonadeStand
         // Member methods 
         public void GameStart()
         {
-            string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
-
-            Database database = new Database();
-            database.DatabaseConnect(connectionString);
+            //string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
+            //Database database = new Database();
+            //database.DatabaseConnect(connectionString);
             //database.DatabaseInsertScore("Derplestein", 9001);
-            database.DatabaseShowScore();
-            database.DatabaseClose();
+            //database.DatabaseShowScore();
+            //database.DatabaseClose();
+
+
+
+            Weather weather = new Weather();
+            weather.WeatherApi();
+
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
         }
@@ -42,7 +47,16 @@ namespace LemonadeStand
             // subtract money
             // put items in inventory
 
-            Console.ReadLine();
+            while (turn <= turnLimit)
+            {
+
+
+                Console.ReadLine();
+
+                Console.WriteLine("Turn: " + turn);
+                turn += 1;
+                
+            }
             
         }
     }
