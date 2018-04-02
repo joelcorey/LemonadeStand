@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
+using System.Data.SQLite;
 
 namespace LemonadeStand
 {
     class Database : APIKey
-    {
-        public async void DatabaseConnect()
-        {
-            var client = new HttpClient();
-            var values = new List<KeyValuePair<string, string>>();
-            values.Add(new KeyValuePair<string, string>("task", task));
-            values.Add(new KeyValuePair<string, string>("merchant", merchant_id));
-            values.Add(new KeyValuePair<string, string>("ref", ref);
-            // include other fields
-            var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("https://voguepay.com/api/", content);
+    { 
 
-            
+        public void DatabaseConnect()
+        {
+            SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;");
+
         }
 
         private void DatabaseSetup()
