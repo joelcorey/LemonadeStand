@@ -9,30 +9,37 @@ namespace LemonadeStand
     {
         // Member variables
         public List<string> wundergroundCities = new List<string>(new string[] {
-                "/ak/anchorage.json",
-                "/il/chicago.json",
-                "/hi/honolulu.json",
-                "/ca/losangeles.json",
-                "/fl/miami.json",
-                "/wi/milwaukee.json",
-                "/or/moro.json",
-                "/or/portland.json",
-                "/wa/seattle.json",
-                "/wa/spokane.json"
-            });
+            "/ak/anchorage.json",
+            "/il/chicago.json",
+            "/hi/honolulu.json",
+            "/ca/losangeles.json",
+            "/fl/miami.json",
+            "/wi/milwaukee.json",
+            "/or/moro.json",
+            "/or/portland.json",
+            "/wa/seattle.json",
+            "/wa/spokane.json"
+        });
 
         // Constructor
+        public WeatherAPI(int weatherLevel) : base(weatherLevel)
+        {
+            this.weatherLevel = weatherLevel;
+        }
 
         // Member methods     
-        public override async void GetWeather(int weatherLevel)
+        public override int GetWeather(int weatherLevel)
+        {
+            return weatherLevel;
+        }
+
+        public async void CreateWeatherTableIfNotExists()
         {
 
         }
 
-        public async void WeatherAPI()
+        public async void WUndergroundGet()
         { 
-            
-
             foreach (var city in wundergroundCities)
             {
                 var client = new RestClient("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q");

@@ -8,6 +8,13 @@ namespace LemonadeStand
 {
     class Weather
     {
+        public int weatherLevel;
+
+        public Weather(int weatherLevel)
+        {
+            this.weatherLevel = weatherLevel;
+        }
+
         public virtual int GetWeather(int weatherLevel)
         {
             switch (weatherLevel)

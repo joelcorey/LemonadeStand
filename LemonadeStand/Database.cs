@@ -8,10 +8,9 @@ namespace LemonadeStand
     {
         //http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
 
-        SQLiteConnection sqliteConnection;
-        SQLiteCommand sqliteCommand;
-        SQLiteDataReader sqliteRead;
-        string sql;
+        public SQLiteConnection sqliteConnection;
+        public SQLiteCommand sqliteCommand;
+        public SQLiteDataReader sqliteRead;
 
         public void DatabaseConnect(string connectionString)
         {
@@ -22,11 +21,11 @@ namespace LemonadeStand
         public void DatabaseDoCommand(string sql)
         {
             sqliteCommand = new SQLiteCommand(sql, sqliteConnection);
+            sqliteCommand.ExecuteNonQuery();
         }
 
-        public void DatabaseShowScore()
+        public void DatabaseShowScore(string sql)
         {
-            sql = "SELECT Name, Score FROM Score ORDER BY Score;";
             sqliteCommand = new SQLiteCommand(sql, sqliteConnection);
             sqliteRead = sqliteCommand.ExecuteReader();
             while (sqliteRead.Read())
