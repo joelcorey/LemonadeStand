@@ -43,15 +43,15 @@ namespace LemonadeStand
 
             while (dayTracker <= dayLimit)
             {
-                day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
-
+                //day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
+                day = new Day(weather.GetTemperatureFallback(rnd.Next(1, 10)));
                 
 
                 Console.WriteLine(day.GetDayName(dayTracker));
                 Console.WriteLine("Week: " + week);
                 Console.WriteLine("Today's temperature is: " + day.dayTemperature);
 
-                playerOne.inventory.AddLemon(5);
+                playerOne.inventory.AddLemon(rnd.Next(1, 10));
                 playerOne.inventory.ListLemons();
                 
 

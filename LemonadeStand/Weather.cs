@@ -46,12 +46,14 @@ namespace LemonadeStand
             var client = new RestClient(baseUrl);
             var request = new RestRequest(location, Method.GET);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.StatusCode); // http response code .. if bad do somethine else
+            Console.WriteLine(response.StatusCode);
             if (response.StatusCode.ToString() == "OK")
             {
-                var content = response.Content; // raw content as string
+                var content = response.Content;
                 var objectResponse = JsonConvert.DeserializeObject<dynamic>(content);
                 return objectResponse.current_observation.temp_f;
+                //An unhandled exception of type 'Microsoft.CSharp.RuntimeBinder.RuntimeBinderException' occurred in System.Core.dll
+                // How should I check "objectResponse.current_observation.temp_f;"? How do you verify that this exists?
             }
             else
             {
