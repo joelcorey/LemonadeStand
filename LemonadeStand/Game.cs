@@ -14,36 +14,25 @@ namespace LemonadeStand
         public int dayTracker = 1;
         public int dayLimit = 20;
         public int week = 1;
-        public string name = "Derplestein";
-        public string weatherlocation = "";
+
         // Constructor
 
         // Member methods 
         public void GameStart()
         {
-            Database database = new Database(Configuration.databaseConnect);
-
             
-
-            Weather weather = new Weather();
-            //GetLocatinoForApi(string weatherLocation)
-            int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)));
-            //int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", "/WI/Milwaukee.json");
-
-
-
             
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
 
-            database.DatabaseClose();
+            
         }
 
         public void GameLoop()
         {
             Player playerOne = new Player("Player one", 10.00, 0);
             //UserInterface.DisplayDouble(playerOne.Money);
-
+            Weather weather = new Weather();
 
             // Go to market/store and buy pitchers, lemons, sugar, etc
             // subtract money
@@ -51,14 +40,13 @@ namespace LemonadeStand
 
             while (dayTracker <= dayLimit)
             {
-                day = new Day();
-
-
+                day = new Day(weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10))));
 
 
 
                 Console.WriteLine(day.GetDayName(dayTracker));
                 Console.WriteLine("Week: " + week);
+                Console.WriteLine("Today's temperature is: " + day.dayTemperature);
                 dayTracker += 1;
                 if (dayTracker > 7)
                 {

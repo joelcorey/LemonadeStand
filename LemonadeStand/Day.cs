@@ -11,8 +11,13 @@ namespace LemonadeStand
         // Member variables
         // Customers per hour?
         public string dayName;
+        public int dayTemperature;
 
         // Constructor
+        public Day(int temperature)
+        {
+            this.dayTemperature = temperature;
+        }
 
         // Member methods
 
@@ -52,6 +57,8 @@ namespace LemonadeStand
             }
             return dayName;
         }
+
+
 
     }
 }
