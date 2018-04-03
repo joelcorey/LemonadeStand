@@ -5,31 +5,10 @@ using RestSharp;
 
 namespace LemonadeStand
 {
-    class WeatherAPI : Credentials
+    class WeatherAPI : Weather
     {
         // Member variables
-        List<string> wundergroundCities;
-
-        // Constructor
-
-        // Member methods
-        public void WeatherApi()
-        {
-            //httpClient = new HttpClient();
-            //var getAsync = httpClient.GetAsync("http://www.google.com").Result;
-            //var response = getAsync.Content;
-            //string responseString = response.ReadAsStringAsync().Result;
-
-            //Console.WriteLine(responseString);
-        }
-        
-    
-        public async void WeatherApi2()
-        {
-
-            //http://api.wunderground.com/api/ccd5561409db5d47/geolookup/conditions/q/WI/Milwaukee.json")
-
-            List<string> wundergroundCities = new List<string>(new string[] {
+        public List<string> wundergroundCities = new List<string>(new string[] {
                 "/ak/anchorage.json",
                 "/il/chicago.json",
                 "/hi/honolulu.json",
@@ -41,6 +20,18 @@ namespace LemonadeStand
                 "/wa/seattle.json",
                 "/wa/spokane.json"
             });
+
+        // Constructor
+
+        // Member methods     
+        public override async void GetWeather(int weatherLevel)
+        {
+
+        }
+
+        public async void WeatherAPI()
+        { 
+            
 
             foreach (var city in wundergroundCities)
             {

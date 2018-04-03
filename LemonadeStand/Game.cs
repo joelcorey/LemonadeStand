@@ -15,27 +15,26 @@ namespace LemonadeStand
         public int dayTracker = 1;
         public int dayLimit = 20;
         public int week = 1;
-
-
+        public string sql;
+        public string name = "Derplestein";
         // Constructor
 
         // Member methods 
         public void GameStart()
         {
-            var derp = rnd.Next(1, 5);
 
-            //string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
-            //Database database = new Database();
-            //database.DatabaseConnect(connectionString);
-            //database.DatabaseInsertScore("Derplestein", 9001);
-            //database.DatabaseShowScore();
-            //database.DatabaseClose();
+            string connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
+            Database database = new Database();
+            database.DatabaseConnect(connectionString);
+            sql = "insert into Score (Name, Score) values('" + name + "', " + rnd.Next(1, 100) + ");";
+            database.DatabaseDoCommand(sql);
+            database.DatabaseShowScore();
+            database.DatabaseClose();
 
 
 
-            WeatherAPI weather = new WeatherAPI();
-            weather.WeatherApi2();
-
+            Weather weather = new Weather();
+            int temperature = weather.GetWeather(rnd.Next(1,10));
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
         }

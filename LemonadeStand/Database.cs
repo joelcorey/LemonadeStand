@@ -19,9 +19,8 @@ namespace LemonadeStand
             sqliteConnection.Open();
         }
 
-        public void DatabaseInsertScore(string name, int score)
+        public void DatabaseDoCommand(string sql)
         {
-            sql = "insert into Score (Name, Score) values('" + name + "', " + score + ");";
             sqliteCommand = new SQLiteCommand(sql, sqliteConnection);
         }
 
