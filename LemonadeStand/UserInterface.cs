@@ -8,6 +8,12 @@ namespace LemonadeStand
 {
     public static class UserInterface
     {
+        public static void DisplayBasicInterface(string day, int week, int temperature)
+        {
+            Console.WriteLine(day);
+            Console.WriteLine("Week: " + week);
+            Console.WriteLine("Today's temperature is: " + temperature);
+        }
         
         public static void DisplayText(string input)
         {
