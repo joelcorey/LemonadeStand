@@ -11,10 +11,10 @@ namespace LemonadeStand
         public SQLiteConnection sqliteConnection;
         public SQLiteCommand sqliteCommand;
         public SQLiteDataReader sqliteRead;
-
-        public Database()
+        
+        public Database(string connection)
         {
-            sqliteConnection = new SQLiteConnection(Configuration.databaseConnect);
+            sqliteConnection = new SQLiteConnection(connection);
             sqliteConnection.Open();
         }      
 

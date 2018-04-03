@@ -28,15 +28,17 @@ namespace LemonadeStand
             //sql = "SELECT Name, Score FROM Score ORDER BY Score;";
             //database.DatabaseShowScore(sql);
 
-            
-
-
-
             Weather weather = new Weather(rnd.Next(1, 10));
-            Console.WriteLine(weather.weatherLevel);
-            database.DatabaseDoCommand("CREATE TABLE IF NOT EXISTS Weather(name VARCHAR(50), temperature INT)");
+            int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", "/WI/Milwaukee.json");
+
+
+
+            
+            Console.WriteLine(temperature);
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
+
+            database.DatabaseClose();
         }
 
         public void GameLoop()
@@ -69,7 +71,7 @@ namespace LemonadeStand
                 Console.ReadLine();
             }
 
-            database.DatabaseClose();
+            
         }
     }
 }
