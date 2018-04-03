@@ -29,11 +29,22 @@ namespace LemonadeStand
 
             //http://api.wunderground.com/api/ccd5561409db5d47/geolookup/conditions/q/WI/Milwaukee.json")
 
-            List<string> wundergroundCities = new List<string>(new string[] { "/WI/Milwaukee.json", "/OR/Moro.json" });
+            List<string> wundergroundCities = new List<string>(new string[] {
+                "/ak/anchorage.json",
+                "/il/chicago.json",
+                "/hi/honolulu.json",
+                "/ca/losangeles.json",
+                "/fl/miami.json",
+                "/wi/milwaukee.json",
+                "/or/moro.json",
+                "/or/portland.json",
+                "/wa/seattle.json",
+                "/wa/spokane.json"
+            });
 
             foreach (var city in wundergroundCities)
             {
-                var client = new RestClient("http://api.wunderground.com/api/ccd5561409db5d47/conditions/q");
+                var client = new RestClient("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q");
                 //var request = new RestRequest("/WI/Milwaukee.json", Method.GET);
                 var request = new RestRequest(city, Method.GET);
 
@@ -48,11 +59,12 @@ namespace LemonadeStand
                 string weatherDescription = objectResponse.current_observation.weather;
 
                 //Console.WriteLine(objectResponse);
-                Console.WriteLine(location);
-                Console.WriteLine(temperature);
-                Console.WriteLine(humidity);
-                Console.WriteLine(windChill);
-                Console.WriteLine(weatherDescription);
+                Console.WriteLine("Location: " + location);
+                Console.WriteLine("Temperature(f): " + temperature);
+                Console.WriteLine("Humidity: " + humidity);
+                Console.WriteLine("Windchill: " + windChill);
+                Console.WriteLine("Description: " + weatherDescription);
+                Console.WriteLine("---");
             }
         }
     }
