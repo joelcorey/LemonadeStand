@@ -31,6 +31,9 @@ namespace LemonadeStand
         public void GameLoop()
         {
             Player playerOne = new Player("Player one", 10.00, 0);
+            
+
+
             //UserInterface.DisplayDouble(playerOne.Money);
             Weather weather = new Weather();
 
@@ -40,20 +43,25 @@ namespace LemonadeStand
 
             while (dayTracker <= dayLimit)
             {
-                day = new Day(weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10))));
+                day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
 
-
+                
 
                 Console.WriteLine(day.GetDayName(dayTracker));
                 Console.WriteLine("Week: " + week);
                 Console.WriteLine("Today's temperature is: " + day.dayTemperature);
+
+                playerOne.inventory.AddLemon(5);
+                playerOne.inventory.ListLemons();
+                
+
+
                 dayTracker += 1;
                 if (dayTracker > 7)
                 {
                     week += 1;
                     dayTracker = 1;
                 }
-
                 Console.ReadLine();
             }
 

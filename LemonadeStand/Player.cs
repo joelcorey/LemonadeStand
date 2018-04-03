@@ -12,6 +12,7 @@ namespace LemonadeStand
         private string name;
         private double money;
         private int level;
+        public Inventory inventory; 
 
         public string Name
         {
@@ -36,15 +37,11 @@ namespace LemonadeStand
             this.name = name;
             this.money = money;
             this.level = level;
+            inventory = new Inventory();
         }
-
-        //public Derp()
-        //{
-
-        //} 
-
-        
+       
         // Member methods
 
+        
     }
 }
