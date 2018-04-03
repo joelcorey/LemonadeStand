@@ -9,60 +9,37 @@ namespace LemonadeStand
     {
         // Member variables
         public int weatherLevel;
-        public List<string> wundergroundCities = new List<string>(new string[] {
-            "/ak/anchorage.json",
-            "/il/chicago.json",
-            "/hi/honolulu.json",
-            "/ca/losangeles.json",
-            "/fl/miami.json",
-            "/wi/milwaukee.json",
-            "/or/moro.json",
-            "/or/portland.json",
-            "/wa/seattle.json",
-            "/wa/spokane.json"
-        });
-
+        
         // Constructor
-        public Weather(int weatherLevel)
-        {
-            this.weatherLevel = weatherLevel;
-        }
 
         // Member methods     
-        public int GetWeather(int weatherLevel)
+        public string GetLocatinoForApi(int weatherLocation)
         {
             switch (weatherLevel)
             {
                 case 1:
-                    return weatherLevel = 10;
+                    return Configuration.wundergroundCities[0];
                 case 2:
-                    return weatherLevel = 20;
+                    return Configuration.wundergroundCities[1];
                 case 3:
-                    return weatherLevel = 30;
+                    return Configuration.wundergroundCities[2];
                 case 4:
-                    return weatherLevel = 40;
+                    return Configuration.wundergroundCities[3];
                 case 5:
-                    return weatherLevel = 50;
+                    return Configuration.wundergroundCities[4];
                 case 6:
-                    return weatherLevel = 60;
+                    return Configuration.wundergroundCities[5];
                 case 7:
-                    return weatherLevel = 70;
+                    return Configuration.wundergroundCities[6];
                 case 8:
-                    return weatherLevel = 80;
+                    return Configuration.wundergroundCities[7];
                 case 9:
-                    return weatherLevel = 90;
+                    return Configuration.wundergroundCities[8];
                 case 10:
-                    return weatherLevel = 100;
+                    return Configuration.wundergroundCities[9];
                 default:
-                    return weatherLevel = 65;
+                    return Configuration.wundergroundCities[5]; 
             }
-        }
-
-        public void SetupWeatherTable()
-        {
-            Database database = new Database(Configuration.databaseConnect);
-            database.DatabaseDoCommand("CREATE TABLE IF NOT EXISTS Weather(name VARCHAR(50), temperature INT)");
-            database.DatabaseClose();
         }
 
         public int getTemperatureFromApi(string baseUrl, string location)

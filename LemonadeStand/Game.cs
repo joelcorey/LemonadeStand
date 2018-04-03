@@ -15,6 +15,7 @@ namespace LemonadeStand
         public int dayLimit = 20;
         public int week = 1;
         public string name = "Derplestein";
+        public string weatherlocation = "";
         // Constructor
 
         // Member methods 
@@ -22,19 +23,16 @@ namespace LemonadeStand
         {
             Database database = new Database(Configuration.databaseConnect);
 
-            //sql = "insert into Score (Name, Score) values('" + name + "', " + rnd.Next(1, 100) + ");";
-            //database.DatabaseDoCommand(sql);
+            
 
-            //sql = "SELECT Name, Score FROM Score ORDER BY Score;";
-            //database.DatabaseShowScore(sql);
-
-            Weather weather = new Weather(rnd.Next(1, 10));
-            int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", "/WI/Milwaukee.json");
+            Weather weather = new Weather();
+            //GetLocatinoForApi(string weatherLocation)
+            int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)));
+            //int temperature = weather.getTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", "/WI/Milwaukee.json");
 
 
 
             
-            Console.WriteLine(temperature);
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
 
