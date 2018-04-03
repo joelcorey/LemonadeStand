@@ -24,18 +24,20 @@ namespace LemonadeStand
         // Constructor
         public WeatherAPI(int weatherLevel) : base(weatherLevel)
         {
-            this.weatherLevel = weatherLevel;
         }
 
         // Member methods     
         public override int GetWeather(int weatherLevel)
         {
+            Console.WriteLine("Override: ");
             return weatherLevel;
         }
 
         public void CreateWeatherTableIfNotExists()
         {
             Database database = new Database();
+            database.DatabaseConnect(Configuration.databaseConnect);
+            database.DatabaseDoCommand("CREATE TABLE IF NOT EXISTS Weather(name VARCHAR(50), temperature INT)");
 
         }
 

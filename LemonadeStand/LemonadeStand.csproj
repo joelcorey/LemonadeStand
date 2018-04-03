@@ -108,6 +108,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="Credentials.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Database.cs" />

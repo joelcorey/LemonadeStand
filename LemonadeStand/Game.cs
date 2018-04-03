@@ -11,34 +11,30 @@ namespace LemonadeStand
         // Member variables
         Day day;
         Random rnd = new Random();
-        public int determineWeather;
         public int dayTracker = 1;
         public int dayLimit = 20;
         public int week = 1;
-        public string connectionString;
-        public string sql;
         public string name = "Derplestein";
         // Constructor
 
         // Member methods 
         public void GameStart()
         {
-            Database database = new Database();
-            database.DatabaseConnect(Configuration.databaseConnect);
+            Database database = new Database(Configuration.databaseConnect);
 
             //sql = "insert into Score (Name, Score) values('" + name + "', " + rnd.Next(1, 100) + ");";
-            //Console.WriteLine("sql: " + sql);
             //database.DatabaseDoCommand(sql);
 
             //sql = "SELECT Name, Score FROM Score ORDER BY Score;";
             //database.DatabaseShowScore(sql);
 
-            //database.DatabaseClose();
+            
 
 
 
             Weather weather = new Weather(rnd.Next(1, 10));
             Console.WriteLine(weather.weatherLevel);
+            database.DatabaseDoCommand("CREATE TABLE IF NOT EXISTS Weather(name VARCHAR(50), temperature INT)");
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
         }
@@ -72,7 +68,8 @@ namespace LemonadeStand
 
                 Console.ReadLine();
             }
-            
+
+            database.DatabaseClose();
         }
     }
 }
