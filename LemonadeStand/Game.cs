@@ -24,17 +24,16 @@ namespace LemonadeStand
         public void GameStart()
         {
             Database database = new Database();
-            connectionString = @"Data Source=C:\install\project\devcode\visualStudio2015\projects\LemonadeStand\lemonadestand.db; Version=3; FailIfMissing=True; Foreign Keys=True;";
-            database.DatabaseConnect(connectionString);
+            database.DatabaseConnect(Configuration.databaseConnect);
 
-            sql = "insert into Score (Name, Score) values('" + name + "', " + rnd.Next(1, 100) + ");";
-            Console.WriteLine("sql: " + sql);
-            database.DatabaseDoCommand(sql);
+            //sql = "insert into Score (Name, Score) values('" + name + "', " + rnd.Next(1, 100) + ");";
+            //Console.WriteLine("sql: " + sql);
+            //database.DatabaseDoCommand(sql);
 
-            sql = "SELECT Name, Score FROM Score ORDER BY Score;";
-            database.DatabaseShowScore(sql);
+            //sql = "SELECT Name, Score FROM Score ORDER BY Score;";
+            //database.DatabaseShowScore(sql);
 
-            database.DatabaseClose();
+            //database.DatabaseClose();
 
 
 

@@ -33,8 +33,9 @@ namespace LemonadeStand
             return weatherLevel;
         }
 
-        public async void CreateWeatherTableIfNotExists()
+        public void CreateWeatherTableIfNotExists()
         {
+            Database database = new Database();
 
         }
 
