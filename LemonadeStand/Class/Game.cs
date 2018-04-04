@@ -68,8 +68,9 @@ namespace LemonadeStand
                     {
                         // TODO: handle all turn specifics here
                         UserInterface.DisplayClear();
-                        UserInterface.DisplayBasicInterface(day.GetDayName(dayTracker), week, day.dayTemperature);
                         UserInterface.DisplayWhoseTurn(player.Name);
+                        UserInterface.DisplayBasicInterface(day.GetDayName(dayTracker), week, day.dayTemperature);
+                        UserInterface.DisplayBasicInventory(player.inventory.lemons.Count, player.inventory.cups.Count, player.inventory.pitchers.Count);
                         UserInterface.DisplayInput();
                         playerInput = Console.ReadLine();
                         inputValidator = inputHandler.InputValidation(options = new List<string>(new string[] { "R", "S", "C", "E" }), playerInput);

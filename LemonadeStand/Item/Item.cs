@@ -9,6 +9,6 @@ namespace LemonadeStand
     class Item
     {
         public double cost;
-        public int weight;
+        public double weight;
     }
 }
