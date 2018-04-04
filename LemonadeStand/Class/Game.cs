@@ -58,7 +58,6 @@ namespace LemonadeStand
                 else
                 {
                     day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
-
                 }
                 
                 foreach (var player in players)
@@ -69,6 +68,7 @@ namespace LemonadeStand
                         // TODO: handle all turn specifics here
                         UserInterface.DisplayClear();
                         UserInterface.DisplayWhoseTurn(player.Name);
+                        UserInterface.DisplayMoney(player.Money);
                         UserInterface.DisplayBasicInterface(day.GetDayName(dayTracker), week, day.dayTemperature);
                         UserInterface.DisplayBasicInventory(player.inventory.lemons.Count, player.inventory.cups.Count, player.inventory.pitchers.Count);
                         UserInterface.DisplayInput();
@@ -87,7 +87,7 @@ namespace LemonadeStand
                                 endTurn = true;
                             }
                         }
-                        //player.inventory.AddLemon(rnd.Next(1, 10), 0.10);
+                        
                     }
                 }
 

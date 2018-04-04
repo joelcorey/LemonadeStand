@@ -42,15 +42,15 @@ namespace LemonadeStand
                 {
                     if (playerInput == "L")
                     {
-                        BuyLemons(player.Money, player.inventory);
+                        BuyLemons(player);
                     }
                     if (playerInput == "C")
                     {
-                        BuyCups(player.Money, player.inventory);
+                        BuyCups(player);
                     }
                     if (playerInput == "P")
                     {
-                        BuyPitchers(player.Money, player.inventory);
+                        BuyPitchers(player);
                     }
                     if (playerInput == "E")
                     {
@@ -60,35 +60,38 @@ namespace LemonadeStand
             }
         }
 
-        public void BuyLemons(double money, Inventory inventory)
+        public void BuyLemons(Player player)
         {
             UserInterface.Display("How many lemons would you like to buy? Amount or (E)xit");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * lemonCost <= money)
+            if (amountInput * lemonCost <= player.Money)
             {
-                inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+                player.inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+                player.Money -= lemonCost;
                 endStore = true;
             }            
         }
 
-        public void BuyCups(double money, Inventory inventory)
+        public void BuyCups(Player player)
         {
             UserInterface.Display("How many cups would you like to buy? Amount or (E)xit");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * cupCost <= money)
+            if (amountInput * cupCost <= player.Money)
             {
-                inventory.AddCup(cupCost, amountInput);
+                player.inventory.AddCup(cupCost, amountInput);
+                player.Money -= cupCost;
                 endStore = true;
             }
         }
 
-        public void BuyPitchers(double money, Inventory inventory)
+        public void BuyPitchers(Player player)
         {
             UserInterface.Display("How many pitchers would you like to buy? Amount or (E)xit");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * pitcherCost <= money)
+            if (amountInput * pitcherCost <= player.Money)
             {
-                inventory.AddPitcher(pitcherCost, amountInput);
+                player.inventory.AddPitcher(pitcherCost, amountInput);
+                player.Money -= pitcherCost;
                 endStore = true;
             }
         }
