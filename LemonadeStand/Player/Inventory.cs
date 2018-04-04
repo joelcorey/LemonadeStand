@@ -30,7 +30,7 @@ namespace LemonadeStand
             }
         }
 
-        public void AddCups(double cost, int amount)
+        public void AddCup(double cost, int amount)
         {
             for (int i = 0; i <= amount; i++)
             {

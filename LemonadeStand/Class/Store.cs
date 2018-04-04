@@ -73,9 +73,9 @@ namespace LemonadeStand
         {
             UserInterface.Display("How many cups would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * lemonCost <= money)
+            if (amountInput * cupCost <= money)
             {
-                inventory.AddCup(pitcherCost, amountInput);
+                inventory.AddCup(cupCost, amountInput);
             }
         }
 
@@ -83,9 +83,9 @@ namespace LemonadeStand
         {
             UserInterface.Display("How many pitchers would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * lemonCost <= money)
+            if (amountInput * pitcherCost <= money)
             {
-                inventory.AddPitcher(cupCost, amountInput);
+                inventory.AddPitcher(pitcherCost, amountInput);
             }
         }
 
