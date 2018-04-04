@@ -9,31 +9,32 @@ namespace LemonadeStand
     class Store
     {
         // Member variables
-        public int pitcherCost;
-        public int cupCost;
-        public int lemonCost;
+        public double pitcherCost;
+        public double cupCost;
+        public double lemonCost;
         public bool endStore;
         public bool inputValidator;
         public InputHandler inputStoreHandler;
         public List<string> options;
         public string playerInput;
+        public int amountInput;
         // Constructor
 
         // Member methods
-        public void StoreInterface(Inventory player, Double money)
+        public void StoreInterface(Double money)
         {
             inputStoreHandler = new InputHandler();
             endStore = false;
             UserInterface.DisplayBasicStore();
             playerInput = Console.ReadLine();
-            while (endStore != false)
+            while (endStore != true)
             {
                 inputValidator = inputStoreHandler.InputValidation(options = new List<string>(new string[] { "L", "P", "C", "E" }), playerInput);
                 if (inputValidator)
                 {
                     if (playerInput == "L")
                     {
-                        UserInterface.Display("How many lemons would you like to buy?");
+                        BuyLemons(money, lemonCost);
                     }
                     if (playerInput == "P")
                     {
@@ -50,6 +51,14 @@ namespace LemonadeStand
 
                 }
             }
+        }
+
+        public void BuyLemons(Double money, Double lemonCost)
+        {
+            UserInterface.Display("How many lemons would you like to buy?");
+            amountInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(amountInput);
+            
         }
         
     }
