@@ -20,5 +20,15 @@ namespace LemonadeStand
                 return false;
             }
         }
+
+        public bool InputValidationNumber(string input)
+        {
+            int returnTry;
+            if (!int.TryParse(input, out returnTry)){
+                return false;
+            }
+            return true;
+        }
+      
     }
 }

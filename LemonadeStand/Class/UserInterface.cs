@@ -50,6 +50,10 @@ namespace LemonadeStand
         {
             Console.WriteLine(input);
         }
+        public static void DisplayBadInput()
+        {
+            Console.WriteLine("Invalid input");
+        }
 
         public static void DisplayDouble(double input)
         {

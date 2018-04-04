@@ -18,6 +18,7 @@ namespace LemonadeStand
         public List<string> options;
         public string playerInput;
         public int amountInput;
+        public string amountInputTest;
         public Random rnd;
 
         // Constructor
@@ -31,7 +32,8 @@ namespace LemonadeStand
         {
             
             inputStoreHandler = new InputHandler();
-            
+
+            UserInterface.DisplayBasicInventory(player.inventory.lemons.Count, player.inventory.cups.Count, player.inventory.pitchers.Count);
             UserInterface.DisplayBasicStore();
             playerInput = Console.ReadLine();
             while (endStore != true)
@@ -61,17 +63,26 @@ namespace LemonadeStand
 
         public void BuyLemons(double money, Inventory inventory)
         {
-            UserInterface.Display("How many lemons would you like to buy?");
-            amountInput = Convert.ToInt32(Console.ReadLine());
-            if (amountInput * lemonCost <= money)
+            UserInterface.Display("How many lemons would you like to buy? Amount or (E)xit");
+            amountInputTest = Console.ReadLine();
+            if (inputStoreHandler.InputValidationNumber(amountInputTest))
             {
-                inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+                if (amountInput * lemonCost <= money)
+                {
+                    inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+                    endStore = true;
+                }
             }
+            else
+            {
+                UserInterface.DisplayBadInput();
+            }
+            
         }
 
         public void BuyCups(double money, Inventory inventory)
         {
-            UserInterface.Display("How many cups would you like to buy?");
+            UserInterface.Display("How many cups would you like to buy? Amount or (E)xit");
             amountInput = Convert.ToInt32(Console.ReadLine());
             if (amountInput * cupCost <= money)
             {
@@ -81,7 +92,7 @@ namespace LemonadeStand
 
         public void BuyPitchers(double money, Inventory inventory)
         {
-            UserInterface.Display("How many pitchers would you like to buy?");
+            UserInterface.Display("How many pitchers would you like to buy? Amount or (E)xit");
             amountInput = Convert.ToInt32(Console.ReadLine());
             if (amountInput * pitcherCost <= money)
             {
