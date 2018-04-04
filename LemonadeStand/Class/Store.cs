@@ -17,8 +17,7 @@ namespace LemonadeStand
         public InputHandler inputStoreHandler;
         public List<string> options;
         public string playerInput;
-        public int amountInput;
-        public string amountInputTest;
+        public int amountInput = 0;
         public Random rnd;
 
         // Constructor
@@ -64,20 +63,12 @@ namespace LemonadeStand
         public void BuyLemons(double money, Inventory inventory)
         {
             UserInterface.Display("How many lemons would you like to buy? Amount or (E)xit");
-            amountInputTest = Console.ReadLine();
-            if (inputStoreHandler.InputValidationNumber(amountInputTest))
+            amountInput = Convert.ToInt32(Console.ReadLine());
+            if (amountInput * lemonCost <= money)
             {
-                if (amountInput * lemonCost <= money)
-                {
-                    inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
-                    endStore = true;
-                }
-            }
-            else
-            {
-                UserInterface.DisplayBadInput();
-            }
-            
+                inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+                endStore = true;
+            }            
         }
 
         public void BuyCups(double money, Inventory inventory)
@@ -87,6 +78,7 @@ namespace LemonadeStand
             if (amountInput * cupCost <= money)
             {
                 inventory.AddCup(cupCost, amountInput);
+                endStore = true;
             }
         }
 
@@ -97,6 +89,7 @@ namespace LemonadeStand
             if (amountInput * pitcherCost <= money)
             {
                 inventory.AddPitcher(pitcherCost, amountInput);
+                endStore = true;
             }
         }
 

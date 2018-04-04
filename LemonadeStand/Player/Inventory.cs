@@ -24,7 +24,7 @@ namespace LemonadeStand
         // Member methods
         public void AddLemon(int age, double cost, int amount)
         {
-            for (int i = 0; i <= amount; i++)
+            for (int i = 1; i <= amount; i++)
             {
                 lemons.Add(new Lemon(age, cost));
             }
@@ -32,7 +32,7 @@ namespace LemonadeStand
 
         public void AddCup(double cost, int amount)
         {
-            for (int i = 0; i <= amount; i++)
+            for (int i = 1; i <= amount; i++)
             {
                 cups.Add(new Cup(cost));
             }
@@ -40,7 +40,7 @@ namespace LemonadeStand
 
         public void AddPitcher(double cost, int amount)
         {
-            for (int i = 0; i <= amount; i++)
+            for (int i = 1; i <= amount; i++)
             {
                 pitchers.Add(new Pitcher(cost));
             }
