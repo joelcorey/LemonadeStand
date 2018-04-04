@@ -30,7 +30,7 @@ namespace LemonadeStand
             }
         }
 
-        public void AddCups(int age, double cost, int amount)
+        public void AddCups(double cost, int amount)
         {
             for (int i = 0; i <= amount; i++)
             {
@@ -38,7 +38,7 @@ namespace LemonadeStand
             }
         }
 
-        public void AddPitcher(int age, double cost, int amount)
+        public void AddPitcher(double cost, int amount)
         {
             for (int i = 0; i <= amount; i++)
             {

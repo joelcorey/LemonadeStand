@@ -43,13 +43,13 @@ namespace LemonadeStand
                     {
                         BuyLemons(player.Money, player.inventory);
                     }
-                    if (playerInput == "P")
-                    {
-                        UserInterface.Display("How many pitchers would you like to buy?");
-                    }
                     if (playerInput == "C")
                     {
-                        UserInterface.Display("How many cups would you like to buy?");
+                        BuyCups(player.Money, player.inventory);
+                    }
+                    if (playerInput == "P")
+                    {
+                        BuyPitchers(player.Money, player.inventory);
                     }
                     if (playerInput == "E")
                     {
@@ -66,6 +66,26 @@ namespace LemonadeStand
             if (amountInput * lemonCost <= money)
             {
                 inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
+            }
+        }
+
+        public void BuyCups(double money, Inventory inventory)
+        {
+            UserInterface.Display("How many cups would you like to buy?");
+            amountInput = Convert.ToInt32(Console.ReadLine());
+            if (amountInput * lemonCost <= money)
+            {
+                inventory.AddCup(pitcherCost, amountInput);
+            }
+        }
+
+        public void BuyPitchers(double money, Inventory inventory)
+        {
+            UserInterface.Display("How many pitchers would you like to buy?");
+            amountInput = Convert.ToInt32(Console.ReadLine());
+            if (amountInput * lemonCost <= money)
+            {
+                inventory.AddPitcher(cupCost, amountInput);
             }
         }
 
