@@ -16,13 +16,17 @@ namespace LemonadeStand
         public int dayLimit = 20;
         public int week = 1;
         public List<Player> players;
-
+        public List<string> options;
+        string playerInput;
+        public InputHandler inputHandler;
+        public bool inputValidator;
+        public bool endTurn = false;
         // Constructor
 
         // Member methods 
         public void GameStart()
         {
-            InputHandler inputHandler = new InputHandler;
+            inputHandler = new InputHandler();
             players = new List<Player>();
 
             UserInterface.DisplayMainTitle();
@@ -36,7 +40,7 @@ namespace LemonadeStand
         public void GameLoop()
         {
             Player playerOne = new Player("Player one", 10.00, 0);
-            Player playerTwo = new Player("Player one", 10.00, 0);
+            Player playerTwo = new Player("Player two", 10.00, 0);
             players.Add(playerOne);
             players.Add(playerTwo);
 
@@ -52,14 +56,28 @@ namespace LemonadeStand
 
                 foreach (var player in players)
                 {
-                    // TODO: handle all turn specifics here
-                    //UserInterface.Display ... display whose turn it is here
-
-                    UserInterface.DisplayBasicInterface(day.GetDayName(dayTracker), week, day.dayTemperature);
-
-
-                    player.inventory.AddLemon(rnd.Next(1, 10));
-
+                    endTurn = false;
+                    while (endTurn != true)
+                    {
+                        // TODO: handle all turn specifics here
+                        UserInterface.DisplayClear();
+                        UserInterface.DisplayBasicInterface(day.GetDayName(dayTracker), week, day.dayTemperature);
+                        UserInterface.DisplayWhoseTurn(player.Name);
+                        UserInterface.DisplayInput();
+                        playerInput = Console.ReadLine();
+                        inputValidator = inputHandler.InputValidation(options = new List<string>(new string[] { "R", "S", "C", "E" }), playerInput);
+                        if (inputValidator)
+                        {
+                            //playerInput == "R" ? : ;
+                            //playerInput == "S" ? : ;
+                            //playerInput == "C" ? : ;
+                            if (playerInput == "E")
+                            {
+                                endTurn = true;
+                            }
+                        }
+                        player.inventory.AddLemon(rnd.Next(1, 10));
+                    }
                 }
 
 
@@ -69,7 +87,7 @@ namespace LemonadeStand
                     week += 1;
                     dayTracker = 1;
                 }
-                Console.ReadLine();
+                //Console.ReadLine();
             }
         }
     }

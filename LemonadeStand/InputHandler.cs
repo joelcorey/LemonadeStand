@@ -9,9 +9,9 @@ namespace LemonadeStand
     class InputHandler
     {
 
-        public bool InputValidation(string expectedInput, string actualInput)
+        public bool InputValidation(List<string> acceptedOptions, string playerInput)
         {
-            if (true)
+            if (acceptedOptions.Contains(playerInput))
             {
                 return true;
             }

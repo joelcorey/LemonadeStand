@@ -8,21 +8,28 @@ namespace LemonadeStand
 {
     public static class UserInterface
     {
+        public static void DisplayClear()
+        {
+            Console.Clear();
+        }
         public static void DisplayMainTitle()
         {
             Console.WriteLine("Welcome to Lemonade Stand");
         }
+
+        public static void DisplayWhoseTurn(string player)
+        {
+            Console.WriteLine("It is " + player + "'s turn");
+        }
         public static void DisplayBasicInterface(string day, int week, int temperature)
         {
-            Console.WriteLine(day);
-            Console.WriteLine("Week: " + week);
-            Console.WriteLine("Today's temperature is: " + temperature);
+            Console.WriteLine("Day: " + day + " Week: " + week + " Temperature: " + temperature);
         }
 
         public static void DisplayInput()
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("You options are: (R)ecipe, (S)tore, (C)raft");
+            Console.WriteLine("You options are: (R)ecipe, (S)tore, (C)raft", "(E)nd turn");
         }
 
         public static void DisplayBasicStore()
