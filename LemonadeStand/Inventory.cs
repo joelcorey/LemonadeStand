@@ -18,9 +18,12 @@ namespace LemonadeStand
         }
 
         // Member methods
-        public void AddLemon(int age, double cost)
+        public void AddLemon(int age, double cost, int amount)
         {
-            lemons.Add(new Lemon(age, cost));
+            for (int i = 0; i <= amount; i++)
+            {
+                lemons.Add(new Lemon(age, cost));
+            }
         }
 
         public void ListLemons()

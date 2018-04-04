@@ -9,10 +9,10 @@ namespace LemonadeStand
     class Store
     {
         // Member variables
-        public double pitcherCost;
-        public double cupCost;
-        public double lemonCost;
-        public bool endStore;
+        public double pitcherCost = 1.00;
+        public double cupCost = 0.05;
+        public double lemonCost = 0.10;
+        public bool endStore = false;
         public bool inputValidator;
         public InputHandler inputStoreHandler;
         public List<string> options;
@@ -31,7 +31,7 @@ namespace LemonadeStand
         {
             
             inputStoreHandler = new InputHandler();
-            endStore = false;
+            
             UserInterface.DisplayBasicStore();
             playerInput = Console.ReadLine();
             while (endStore != true)
@@ -41,7 +41,7 @@ namespace LemonadeStand
                 {
                     if (playerInput == "L")
                     {
-                        BuyLemons(player.Money);
+                        BuyLemons(player.Money, player.inventory);
                     }
                     if (playerInput == "P")
                     {
@@ -59,15 +59,16 @@ namespace LemonadeStand
             }
         }
 
-        public void BuyLemons(Player player, Double lemonCost)
+        public void BuyLemons(double money, Inventory inventory)
         {
             UserInterface.Display("How many lemons would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            if (true)
+            if (amountInput * lemonCost <= money)
             {
-                player.inventory.AddLemon(rnd.Next(1, 10), lemonCost);
+                inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
             }
-            
         }
+
+
     }
 }
