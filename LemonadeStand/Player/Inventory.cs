@@ -22,7 +22,7 @@ namespace LemonadeStand
         }
 
         // Member methods
-        public void AddLemon(int age, double cost, int amount)
+        public void AddLemon(int age, decimal cost, int amount)
         {
             for (int i = 1; i <= amount; i++)
             {
@@ -30,7 +30,7 @@ namespace LemonadeStand
             }
         }
 
-        public void AddCup(double cost, int amount)
+        public void AddCup(decimal cost, int amount)
         {
             for (int i = 1; i <= amount; i++)
             {
@@ -38,7 +38,7 @@ namespace LemonadeStand
             }
         }
 
-        public void AddPitcher(double cost, int amount)
+        public void AddPitcher(decimal cost, int amount)
         {
             for (int i = 1; i <= amount; i++)
             {

@@ -41,8 +41,8 @@ namespace LemonadeStand
 
         public void GameLoop()
         {
-            Player playerOne = new Player("Player one", 10.00, 0);
-            Player playerTwo = new Player("Player two", 10.00, 0);
+            Player playerOne = new Player("Player one", 10.00m, 0);
+            Player playerTwo = new Player("Player two", 10.00m, 0);
             players.Add(playerOne);
             players.Add(playerTwo);
 

@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Item
     {
-        public double cost;
-        public double weight;
+        public decimal cost;
+        public decimal weight;
     }
 }

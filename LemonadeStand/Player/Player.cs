@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         // Member variables
         private string name;
-        private double money;
+        private decimal money;
         private int level;
         public Inventory inventory; 
 
@@ -19,7 +19,7 @@ namespace LemonadeStand
             get { return name; }
         }
 
-        public double Money
+        public decimal Money
         {
             get { return money; }
             set { money = value; }
@@ -32,7 +32,7 @@ namespace LemonadeStand
         }
 
         // Constructor
-        public Player(string name, double money, int level)
+        public Player(string name, decimal money, int level)
         {
             this.name = name;
             this.money = money;

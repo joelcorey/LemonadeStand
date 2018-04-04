@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Pitcher : Item
     {
-        public Pitcher(double cost)
+        public Pitcher(decimal cost)
         {
             this.cost = cost;
         }

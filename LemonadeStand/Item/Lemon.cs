@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         public int age;
 
-        public Lemon(int age, double cost)
+        public Lemon(int age, decimal cost)
         {
             this.age = age;
             this.cost = cost;

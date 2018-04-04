@@ -9,9 +9,9 @@ namespace LemonadeStand
     class Store
     {
         // Member variables
-        public double pitcherCost = 1.00;
-        public double cupCost = 0.05;
-        public double lemonCost = 0.10;
+        public decimal pitcherCost = 1.00m;
+        public decimal cupCost = 0.05m;
+        public decimal lemonCost = 0.10m;
         public bool endStore = false;
         public bool inputValidator;
         public InputHandler inputStoreHandler;
@@ -24,7 +24,10 @@ namespace LemonadeStand
         public Store(Random rnd)
         {
             this.rnd = rnd;
-        }
+            pitcherCost = 1.00m;
+            cupCost = 0.05m;
+            lemonCost = 0.10m;
+    }
 
         // Member methods
         public void StoreInterface(Player player)
@@ -67,7 +70,7 @@ namespace LemonadeStand
             if (amountInput * lemonCost <= player.Money)
             {
                 player.inventory.AddLemon(rnd.Next(1, 10), lemonCost, amountInput);
-                player.Money -= lemonCost;
+                player.Money -= amountInput * lemonCost;
                 endStore = true;
             }            
         }
@@ -79,7 +82,7 @@ namespace LemonadeStand
             if (amountInput * cupCost <= player.Money)
             {
                 player.inventory.AddCup(cupCost, amountInput);
-                player.Money -= cupCost;
+                player.Money -= amountInput * cupCost;
                 endStore = true;
             }
         }
@@ -91,7 +94,7 @@ namespace LemonadeStand
             if (amountInput * pitcherCost <= player.Money)
             {
                 player.inventory.AddPitcher(pitcherCost, amountInput);
-                player.Money -= pitcherCost;
+                player.Money -= amountInput * pitcherCost;
                 endStore = true;
             }
         }

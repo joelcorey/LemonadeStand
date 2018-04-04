@@ -46,9 +46,10 @@ namespace LemonadeStand
             Console.WriteLine("Buy (L)emon, (C)up, (P)ither, (E)xit store");
         }
 
-        public static void DisplayMoney(double money)
+        public static void DisplayMoney(decimal money)
         {
-            Console.WriteLine("Money: " + money);
+            // Console.WriteLine("{0:0.00}", input);
+            Console.WriteLine("Money: {0:0.00}", money);
         }
 
         public static void Display(string input)

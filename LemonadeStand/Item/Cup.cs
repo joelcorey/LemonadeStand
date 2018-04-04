@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Cup : Item
     {
-        public Cup(double cost)
+        public Cup(decimal cost)
         {
             this.cost = cost;
         }
