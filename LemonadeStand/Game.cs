@@ -68,9 +68,12 @@ namespace LemonadeStand
                         inputValidator = inputHandler.InputValidation(options = new List<string>(new string[] { "R", "S", "C", "E" }), playerInput);
                         if (inputValidator)
                         {
-                            //playerInput == "R" ? : ;
-                            //playerInput == "S" ? : ;
-                            //playerInput == "C" ? : ;
+                            //if(playerInput == "R") // Handle recipe input
+                            //if(playerInput == "C") // Handle crafting input
+                            if (playerInput == "S")
+                            {
+                                store.StoreInterface(player);
+                            }
                             if (playerInput == "E")
                             {
                                 endTurn = true;

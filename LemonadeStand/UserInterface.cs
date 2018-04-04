@@ -23,20 +23,20 @@ namespace LemonadeStand
         }
         public static void DisplayBasicInterface(string day, int week, int temperature)
         {
-            Console.WriteLine("Day: " + day + " Week: " + week + " Temperature: " + temperature);
+            Console.WriteLine("Day: " + day + ", Week: " + week + ", Temperature: " + temperature);
         }
 
         public static void DisplayInput()
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("You options are: (R)ecipe, (S)tore, (C)raft", "(E)nd turn");
+            Console.WriteLine("Your options are: (S)tore, (E)nd turn");
         }
 
         public static void DisplayBasicStore()
         {
             Console.WriteLine("Welcome to the store");
-            Console.WriteLine("Cost per lemon: 10");
-            Console.WriteLine("How many lemonds would you like to buy today?");
+            Console.WriteLine("Cost per lemon: 0.10, cost per cup: 0.05, cost per pither: 1.00");
+            
         }
         
         public static void Display(string input)
