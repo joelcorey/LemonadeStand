@@ -46,7 +46,7 @@ namespace LemonadeStand
             players.Add(playerTwo);
 
             Weather weather = new Weather();
-            store = new Store();
+            store = new Store(rnd);
 
             while (dayTracker <= dayLimit)
             {
