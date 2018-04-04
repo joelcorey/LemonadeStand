@@ -9,6 +9,7 @@ namespace LemonadeStand
     class Lemon : Item
     {
         public int age;
+
         public Lemon(int age, double cost)
         {
             this.age = age;

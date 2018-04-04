@@ -22,6 +22,7 @@ namespace LemonadeStand
         public InputHandler inputStore;
         public bool inputValidator;
         public bool endTurn = false;
+        public bool wundergroundEnable = false;
         // Constructor
 
         // Member methods 
@@ -50,9 +51,16 @@ namespace LemonadeStand
 
             while (dayTracker <= dayLimit)
             {
-                //day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
-                day = new Day(weather.GetTemperatureFallback(rnd.Next(1, 10)));
+                if(wundergroundEnable == false)
+                {
+                    day = new Day(weather.GetTemperatureFallback(rnd.Next(1, 10)));
+                }
+                else
+                {
+                    day = new Day(weather.GetTemperatureFromApi("http://api.wunderground.com/api/" + Credentials.token + "/conditions/q", weather.GetLocatinoForApi(rnd.Next(1, 10)), rnd.Next(1, 10)));
 
+                }
+                
                 foreach (var player in players)
                 {
                     endTurn = false;

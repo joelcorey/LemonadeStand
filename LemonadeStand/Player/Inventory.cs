@@ -9,12 +9,16 @@ namespace LemonadeStand
     class Inventory
     {
         // Member variables
-        List<Lemon> lemons;
+        public List<Lemon> lemons;
+        public List<Cup> cups;
+        public List<Pitcher> pitchers;
 
         // Constructor
         public Inventory()
         {
             lemons = new List<Lemon>();
+            cups = new List<Cup>();
+            pitchers = new List<Pitcher>();
         }
 
         // Member methods
@@ -23,6 +27,22 @@ namespace LemonadeStand
             for (int i = 0; i <= amount; i++)
             {
                 lemons.Add(new Lemon(age, cost));
+            }
+        }
+
+        public void AddCups(int age, double cost, int amount)
+        {
+            for (int i = 0; i <= amount; i++)
+            {
+                cups.Add(new Cup(cost));
+            }
+        }
+
+        public void AddPitcher(int age, double cost, int amount)
+        {
+            for (int i = 0; i <= amount; i++)
+            {
+                pitchers.Add(new Pitcher(cost));
             }
         }
 

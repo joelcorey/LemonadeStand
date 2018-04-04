@@ -26,6 +26,11 @@ namespace LemonadeStand
             Console.WriteLine("Day: " + day + ", Week: " + week + ", Temperature: " + temperature);
         }
 
+        public static void DisplayBasicInventory(int countLemons, int countCups, int countPitchers)
+        {
+            Console.WriteLine("Lemons: " + countLemons + ", Cups: " + countCups + ", Pitchers: " + countPitchers);
+        }
+
         public static void DisplayInput()
         {
             Console.WriteLine("What would you like to do?");

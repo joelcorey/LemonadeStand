@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Pitcher
+    class Pitcher : Item
     {
+        public Pitcher(double cost)
+        {
+            this.cost = cost;
+        }
     }
 }
