@@ -71,14 +71,14 @@ namespace LemonadeStand
                             //if(playerInput == "C") // Handle crafting input
                             if (playerInput == "S")
                             {
-                                store.StoreInterface(player.Money);
+                                store.StoreInterface(player);
                             }
                             if (playerInput == "E")
                             {
                                 endTurn = true;
                             }
                         }
-                        //player.inventory.AddLemon(rnd.Next(1, 10));
+                        //player.inventory.AddLemon(rnd.Next(1, 10), 0.10);
                     }
                 }
 

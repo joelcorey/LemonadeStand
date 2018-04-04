@@ -18,11 +18,18 @@ namespace LemonadeStand
         public List<string> options;
         public string playerInput;
         public int amountInput;
+        public Random rnd;
+
         // Constructor
+        public Store(Random rnd)
+        {
+            this.rnd = rnd;
+        }
 
         // Member methods
-        public void StoreInterface(Double money)
+        public void StoreInterface(Player player)
         {
+            
             inputStoreHandler = new InputHandler();
             endStore = false;
             UserInterface.DisplayBasicStore();
@@ -34,7 +41,7 @@ namespace LemonadeStand
                 {
                     if (playerInput == "L")
                     {
-                        BuyLemons(money, lemonCost);
+                        BuyLemons(player.Money);
                     }
                     if (playerInput == "P")
                     {
@@ -48,18 +55,19 @@ namespace LemonadeStand
                     {
                         endStore = true;
                     }
-
                 }
             }
         }
 
-        public void BuyLemons(Double money, Double lemonCost)
+        public void BuyLemons(Player player, Double lemonCost)
         {
             UserInterface.Display("How many lemons would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(amountInput);
+            if (true)
+            {
+                player.inventory.AddLemon(rnd.Next(1, 10), lemonCost);
+            }
             
         }
-        
     }
 }

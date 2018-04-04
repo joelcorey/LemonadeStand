@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Lemon
+    class Lemon : Item
     {
         public int age;
-        public Lemon(int age)
+        public Lemon(int age, double cost)
         {
             this.age = age;
+            this.cost = cost;
         }
     }
 }
