@@ -13,6 +13,10 @@ namespace LemonadeStand
         // Constructor
 
         // Member methods
-
+        public void DoStore(Player player)
+        {
+            UserInterface.DisplayBasicStore();
+        }
+        
     }
 }

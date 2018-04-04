@@ -45,7 +45,7 @@ namespace LemonadeStand
         {
             var client = new RestClient(baseUrl);
             var request = new RestRequest(location, Method.GET);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = client.Execute(request); // TODO: Add try catch here
             Console.WriteLine(response.StatusCode);
             if (response.StatusCode.ToString() == "OK")
             {
