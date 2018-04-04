@@ -19,6 +19,7 @@ namespace LemonadeStand
         public List<string> options;
         string playerInput;
         public InputHandler inputHandler;
+        public InputHandler inputStore;
         public bool inputValidator;
         public bool endTurn = false;
         // Constructor
@@ -27,13 +28,13 @@ namespace LemonadeStand
         public void GameStart()
         {
             inputHandler = new InputHandler();
+            inputStore = new InputHandler();
             players = new List<Player>();
 
             UserInterface.DisplayMainTitle();
 
             // If first load, display intro and main menu
             // PvP or PvC option (CvC ?!)
-
 
         }
 
@@ -46,8 +47,6 @@ namespace LemonadeStand
 
             Weather weather = new Weather();
             store = new Store();
-
-
 
             while (dayTracker <= dayLimit)
             {
@@ -72,7 +71,7 @@ namespace LemonadeStand
                             //if(playerInput == "C") // Handle crafting input
                             if (playerInput == "S")
                             {
-                                store.StoreInterface(player);
+                                store.StoreInterface(player.inventory, player.Money);
                             }
                             if (playerInput == "E")
                             {
@@ -90,7 +89,6 @@ namespace LemonadeStand
                     week += 1;
                     dayTracker = 1;
                 }
-                //Console.ReadLine();
             }
         }
     }
