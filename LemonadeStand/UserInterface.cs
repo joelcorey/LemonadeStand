@@ -34,9 +34,11 @@ namespace LemonadeStand
 
         public static void DisplayBasicStore()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the store");
-            Console.WriteLine("Cost per lemon: 0.10, cost per cup: 0.05, cost per pither: 1.00");
-            
+            Console.WriteLine("Cost per lemon: 0.10, cost per cup: 0.05, cost per pitcher: 1.00");
+            Console.WriteLine("Options:");
+            Console.WriteLine("Buy (L)emon, (C)up, (P)ither, (E)xit store");
         }
         
         public static void Display(string input)
