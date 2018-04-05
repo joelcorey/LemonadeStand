@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public class Store
     {
         // Member variables
         public decimal pitcherCost = 1.00m;
@@ -27,7 +27,7 @@ namespace LemonadeStand
             pitcherCost = 1.00m;
             cupCost = 0.05m;
             lemonCost = 0.10m;
-    }
+        }
 
         // Member methods
         public void StoreInterface(Player player)
@@ -65,7 +65,7 @@ namespace LemonadeStand
 
         public void BuyLemons(Player player)
         {
-            UserInterface.Display("How many lemons would you like to buy? Amount or (E)xit");
+            UserInterface.Display("How many lemons would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
             if (amountInput * lemonCost <= player.Money)
             {
@@ -77,7 +77,7 @@ namespace LemonadeStand
 
         public void BuyCups(Player player)
         {
-            UserInterface.Display("How many cups would you like to buy? Amount or (E)xit");
+            UserInterface.Display("How many cups would you like to buy?");
             amountInput = Convert.ToInt32(Console.ReadLine());
             if (amountInput * cupCost <= player.Money)
             {
@@ -89,7 +89,7 @@ namespace LemonadeStand
 
         public void BuyPitchers(Player player)
         {
-            UserInterface.Display("How many pitchers would you like to buy? Amount or (E)xit");
+            UserInterface.Display("How many pitchers would you like to buy?t");
             amountInput = Convert.ToInt32(Console.ReadLine());
             if (amountInput * pitcherCost <= player.Money)
             {

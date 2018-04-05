@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class HighScore
+    public class HighScore
     {
         //Database database = new Database(Configuration.databaseConnect);
 

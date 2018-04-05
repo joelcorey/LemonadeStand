@@ -4,7 +4,7 @@ using System.Data.SQLite;
 
 namespace LemonadeStand
 {
-    class Database
+    public class Database
     {
         //http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
 

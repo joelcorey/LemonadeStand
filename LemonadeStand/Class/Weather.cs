@@ -5,7 +5,7 @@ using RestSharp;
 
 namespace LemonadeStand
 {
-    class Weather
+    public class Weather
     {
         // Member variables
                 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class InputHandler
+    public class InputHandler
     {
 
         public bool InputValidation(List<string> acceptedOptions, string playerInput)
