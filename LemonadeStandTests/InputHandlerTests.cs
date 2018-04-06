@@ -9,7 +9,7 @@ namespace LemonadeStandTests
     public class InputHandlerTests
     {
         [TestMethod]
-        public void GetInput_StringInListString_ReturnsTrue()
+        public void InputValidation_StringInListString_ReturnsTrue()
         {
             InputHandler inputHandler= new InputHandler();
             //Arrange
@@ -23,7 +23,7 @@ namespace LemonadeStandTests
         }
 
         [TestMethod]
-        public void GetInput_StringInListString_ReturnsFalse()
+        public void InputValidationt_StringInListString_ReturnsFalse()
         {
             InputHandler inputHandler = new InputHandler();
             //Arrange
@@ -35,5 +35,7 @@ namespace LemonadeStandTests
             //Assert
             Assert.IsFalse(inputValidator);
         }
+
+
     }
 }
